@@ -25,7 +25,11 @@ def predict():
         image = Image.open(io.BytesIO(file.read()))
         processed_image = preprocess_image(image)
         prediction = model.predict(processed_image)
-        return jsonify({'prediction': prediction.tolist()})
+        response = jsonify({'prediction': prediction.tolist()})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        response.headers.add('Access-Control-Allow-Methods', 'POST')
+        return response
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
