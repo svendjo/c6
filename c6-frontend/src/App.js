@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function App() {
   const [image, setImage] = useState(null);
@@ -54,7 +55,8 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div className='App'>
+      <header className='App-header'>
       <h1>Image Upload and Prediction</h1>
       <input type="file" accept="image/jpeg" onChange={handleImageUpload} />
       {image && (
@@ -70,6 +72,7 @@ function App() {
           <p>{prediction}</p>
         </div>
       )}
+      </header>
     </div>
   );
 }
