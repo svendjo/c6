@@ -9,3 +9,8 @@
 
 `docker push 021891586863.dkr.ecr.us-west-2.amazonaws.com/chocolate-repository:latest`
 
+## Build frontend
+`npm run build`
+
+## Sync frontend to S3
+`aws s3 sync ./build s3://chocolate-frontend`

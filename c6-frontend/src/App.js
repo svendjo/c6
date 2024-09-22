@@ -57,7 +57,7 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-      <h1>Image Upload and Prediction</h1>
+      <h1>Count Chocolate II</h1>
       <input type="file" accept="image/jpeg" onChange={handleImageUpload} />
       {image && (
         <div>
@@ -65,10 +65,10 @@ function App() {
           <img src={image} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '300px' }} />
         </div>
       )}
-      <button onClick={handleSubmit} style={{ marginTop: '20px', padding: '10px' }}>Get Prediction</button>
+      <button onClick={handleSubmit} style={{ marginTop: '20px', padding: '10px' }}>Count chocolate chips</button>
       {prediction !== null && (
         <div style={{ marginTop: '20px' }}>
-          <h2>Prediction:</h2>
+          <h2>Result:</h2>
           <p>{prediction}</p>
         </div>
       )}
